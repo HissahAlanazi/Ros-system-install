@@ -39,10 +39,67 @@ then system ready click start
                                                                                                                                                                      
 <img width="669" alt="image" src="https://user-images.githubusercontent.com/85851678/180610664-fc2d829e-c86c-49db-b002-aa3d20c3dc1c.png">
                                                                                                                                                                      
-10-Now it's upload Ubuntu                                                                                                                                           
-11-Now open Ubuntu                                                                                                                                                   
+10- Now it's upload Ubuntu                                                                                                                                           
+11- Now open Ubuntu                                                                                                                                                 
 12- open website https://s-m.com.sa/ros.txt  This site has all the commands to download Ros                                                                         
+13- open the terminal and write the commands
 
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'                          ////  Prepares the device to install a Ros
 
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+sudo apt-get update                                        ////  doing a system update
+
+sudo apt-get install ros-kinetic-desktop-full             ////  install Ros Kinetic
+
+apt-cache search ros-kinetic
+
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+
+sudo apt install python-rosdep
+
+sudo rosdep init    
+
+rosdep update
+
+sudo apt-get install ros-noetic-catkin
+
+mkdir -p ~/catkin_ws/src         ////  We work here on Workspace and I give the name catkin_ws you can give any name you want
+
+cd ~/catkin_ws/
+
+catkin_make                     ////  I install the package for arm that I need in the project
+
+cd ~/catkin_ws/src       
+
+git clone https://github.com/smart-methods/arduino_robot_arm.git 
+
+cd ~/catkin_ws
+
+rosdep install --from-paths src --ignore-src -r -y
+
+sudo apt-get install ros-kinetic-moveit
+
+sudo apt-get install ros-kinetic-joint-state-publisher ros-kinetic-joint-state-publisher-gui
+
+sudo apt-get install ros-kinetic-gazebo-ros-control joint-state-publisher
+
+sudo apt-get install ros-kinetic-ros-controllers ros-kinetic-ros-control
+
+sudo nano ~/.bashrc
+
+at the end of the (bashrc) file add the follwing line
+(source /home/hissah/catkin_ws/devel/setup.bash)
+then 
+ctrl + o     ////   for out 
+
+source ~/.bashrc
+
+roslaunch robot_arm_pkg check_motors.launch              ////   He's going to work with me program Rviz
+
+### In the end, the Ros software was downloaded and packagand the arm package we needed in the mission ran.
 
 
