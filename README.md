@@ -107,7 +107,9 @@ ctrl + o     ////   for out
 source ~/.bashrc
 
 roslaunch robot_arm_pkg check_motors.launch              ////   He's going to work with me program Rviz
-
+                                                                                                                                                                     
+<img width="960" alt="arm" src="https://user-images.githubusercontent.com/85851678/180617267-149e86c2-a302-4f0c-8af0-7f7e17a800a3.png">
+                                                                                                                                                                     
 ### In the end, the Ros software was downloaded and packagand the arm package we needed in the mission ran.
 
 
