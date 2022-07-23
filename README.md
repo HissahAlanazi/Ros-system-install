@@ -67,6 +67,14 @@ rosdep update
 
 sudo apt-get install ros-noetic-catkin
 
+sudo apt-get install ros-kinetic-rosserial-arduino            ////  install Arduino IDE                                                                             
+sudo apt-get install ros-kinetic-rosserial
+                                                                                                                                                                     
+cd <sketchbook>/libraries                                    ////   Install the ros_lib library on the Arduino program                                               
+rm -rf ros_lib                                                                                                                                                       
+rosrun rosserial_arduino make_libraries.py    
+
+
 mkdir -p ~/catkin_ws/src         ////  We work here on Workspace and I give the name catkin_ws you can give any name you want
 
 cd ~/catkin_ws/
